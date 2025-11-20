@@ -1,0 +1,63 @@
+---
+interface Props {
+  title: string;
+}
+
+const { title } = Astro.props;
+
+---
+
+<header>
+  <p>Oficina Virtual
+    <br />
+    Dip. Gilberto Daniel Castillo Garcia
+  </p>
+  <img src="morenalogo.webp" alt="Logo de morena">
+  <nav>
+    <ul>
+      <li><a href="/galeria">Galeria</a></li>
+      <li><a href="/acercade">Acerca de</a></li>
+      <li><a href="/contacto">Contacto</a></li>
+    </ul>
+  </nav>
+</header>
+
+
+
+<style>
+  header {
+    background-color: #3b0b46;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  header img {
+    width: 150px;
+    height: 150px;
+  }
+
+  header p {
+    color: lightgray;
+    font-size: 1.5rem;
+    margin-left: 10px;
+  }
+
+  header nav ul {
+    display: flex;
+    flex-direction: row wrap;
+    list-style: none;
+  }
+
+  header nav ul li {
+    padding: 5px;
+    background-color: lightgray;
+  }
+
+  header nav ul li a {
+    display: inline-block;
+    padding: 10px;
+    text-decoration: none;
+    color: black;
+    font-size: 1.5rem;
+  }
+</style>
