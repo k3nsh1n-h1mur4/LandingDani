@@ -73,4 +73,15 @@ import Footer from "@components/Footer.astro";
     grid-area: foter;
   }
 
+  @media (max-width: 600px) {
+    .main-container {
+      grid-template-columns: 1fr;
+      grid-template-rows: 1fr;
+      grid-template-areas:
+        "head"
+        "main"
+        "foter";
+    }
+  }
+
 </style>
