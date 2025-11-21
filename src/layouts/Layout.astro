@@ -40,21 +40,28 @@ import Footer from "@components/Footer.astro";
   html {
     font-family: "Stack Sans Headline", sans-serif;
   }
-  body {
+  :root {
     margin: 0;
     width: 100%;
     height: 100vh;
   }
-  .main-container {
+
+  body {
+    margin: 0;
     width: 100%;
+    height: 100vh;
+    box-sizing: content-box;
+  }
+  .main-container {
+    box-sizing: content-box;
     min-height: 100vh;
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: auto;
     grid-template-areas:
-      "head head"
-      "main main"
-      "foter foter";  
+      "head head head"
+      "main main main"
+      "foter foter foter";  
     
   }
 
@@ -65,7 +72,6 @@ import Footer from "@components/Footer.astro";
   .main-container > main {
     background-color: lightgray;
     grid-area: main;
-    align-items: start;
   }
 
   .main-container > footer {
@@ -73,16 +79,16 @@ import Footer from "@components/Footer.astro";
     grid-area: foter;
   }
 
-  @media (max-width: 600px) {
+  /*@media screen and (min-width: 768px) {
     .main-container {
       display: grid;
-      grid-template-columns: 1fr;
-      grid-template-rows: 1fr;
+      grid-template-columns: auto;
+      grid-template-rows: auto;
       grid-template-areas:
-        "head"
-        "main"
-        "foter";
+        "head head"
+        "main main"
+        "foter foter";
     }
-  }
+  }*/
 
 </style>
