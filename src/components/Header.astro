@@ -26,7 +26,7 @@ const { title } = Astro.props;
 
 <style>
   header {
-    background-color: #3b0b46;
+    background-color: #6d0c2e;
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -50,14 +50,48 @@ const { title } = Astro.props;
 
   header nav ul li {
     padding: 5px;
-    background-color: lightgray;
+    /*background-color: lightgray;*/
   }
 
   header nav ul li a {
     display: inline-block;
     padding: 10px;
     text-decoration: none;
-    color: black;
+    color: lightgray;
     font-size: 1.5rem;
+  }
+
+  /*@medoa (max-width: 600px) {
+    header {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      height: 100vh;
+    }
+    header img {
+      width: 100px;
+      height: 100px;
+    }
+    header p {
+      font-size: 1rem;
+    }
+    header nav ul {
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+    header nav ul li {
+      padding: 5px;
+      background-color: lightgray;
+    }
+    header nav ul li a {
+      display: inline-block;
+      padding: 0px;
+      text-decoration: none;
+      color: lightgray;
+      font-size: .5rem;
+    }*/
   }
 </style>
