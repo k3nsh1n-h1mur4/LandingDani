@@ -1,9 +1,14 @@
 ---
-export function getStaticPaths(){
-  return [
-    {params: {}},    
+import { getCollection } from "astro:content";
 
-  ]
+const albums = await getCollection("albums");
+console.log(albums);
+
+export function getStaticPaths() {
+  albums.map((album) => {
+    console.log(album.id);
+    return [{ params: { slug: album.id } }];
+  });
 }
 
 const { slug } = Astro.params;
