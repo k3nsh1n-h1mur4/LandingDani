@@ -39,7 +39,8 @@ pages.map((page) => {
                     <Image
                         src={page.data.cover}
                         alt={page.data.title}
-                        width={720}
+                        width={520}
+                        min-height={100}
                         quality="mid"
                         class:list={[
                             "rounded-lg transition-all",
@@ -47,8 +48,7 @@ pages.map((page) => {
                         ]}
                     />
                     <div class="mt-4 text-center text-neutral-700">
-                        <strong class="font-normal">{page.data.title}</strong>
-                        <p class="text-xs">{page.data.description}</p>
+                        <strong class="font-normal">{page.data.description}</strong>
                     </div>
                 </a>
             ))
