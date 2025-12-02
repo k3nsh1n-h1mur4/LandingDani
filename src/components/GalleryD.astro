@@ -3,6 +3,8 @@ import { Image } from "astro:assets";
 import { getCollection } from "astro:content";
 import Layout from "@layouts/Layout.astro";
 import { oboolean } from "astro:schema";
+import Header from "@components/Header.astro";
+
 
 const albums = await getCollection("albums");
 /*export function getStaticPaths() {
@@ -71,6 +73,6 @@ pages.map((page) => {
     .container-grid {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
-        grid-gap: 10px;
+        grid-gap: 5px;
     }
 </style>

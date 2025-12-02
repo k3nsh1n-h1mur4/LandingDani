@@ -2,7 +2,6 @@
 import { Image } from "astro:assets";
 import { getCollection } from "astro:content";
 import Layout from "@layouts/Layout.astro";
-import { oboolean } from "astro:schema";
 
 const albums = await getCollection("albums");
 /*export function getStaticPaths() {
@@ -26,6 +25,8 @@ pages.map((page) => {
         params: {id: page.id},
     }
 });
+
+const { id, title, description, cover } = Astro.props;
 ---
 
 <div class="container">
@@ -34,6 +35,7 @@ pages.map((page) => {
     </div>
     <div class="container-grid">
         {
+            
             pages.map((page) => (
                 <a href={`/albums/${page.id}`} class="group transition-all mb-4 block">
                     <Image
