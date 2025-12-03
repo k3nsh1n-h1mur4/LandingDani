@@ -4,6 +4,7 @@ import { getCollection } from "astro:content";
 import Layout from "@layouts/Layout.astro";
 import { oboolean } from "astro:schema";
 import Header from "@components/Header.astro";
+import BaseLayout from "@layouts/BaseLayout.astro";
 
 
 const albums = await getCollection("albums");
@@ -30,9 +31,10 @@ pages.map((page) => {
 });
 ---
 
+<BaseLayout title="Galeria">
 <div class="container">
     <div class="title">
-        <h1>Galeria</h1>
+        <h1>Galería</h1>
     </div>
     <div class="container-grid">
         {
@@ -57,6 +59,7 @@ pages.map((page) => {
         }
     </div>
 </div>
+</BaseLayout>
 
 <style>
     .container {

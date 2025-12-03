@@ -1,4 +1,6 @@
 ---
+import BaseLayout from "@layouts/BaseLayout.astro";
+
 interface Props {
   title: string;
 }
@@ -6,21 +8,23 @@ interface Props {
 const { title } = Astro.props;
 
 ---
-
+<BaseLayout title="Header">
 <header>
   <p>Oficina Virtual
     <br />
-    Dip. Gilberto Daniel Castillo Garcia
+    Dip. Gilberto Daniel Castillo García
   </p>
   <img src="/images/morenalogo.webp" alt="Logo de morena">
   <nav>
     <ul>
-      <li><a href="/albums/gallery">Galeria</a></li>
-      <li><a href="#">Acerca de</a></li>
+      <li><a href="/albums/gallery">Galería</a></li>
+      <li><a href="/about">Acerca de</a></li>
       <li><a href="#">Contacto</a></li>
     </ul>
   </nav>
 </header>
+</BaseLayout>
+
 
 
 

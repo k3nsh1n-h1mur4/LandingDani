@@ -1,5 +1,6 @@
 import { defineCollection, z } from "astro:content";
 import { glob, file } from "astro/loaders";
+import { object } from "astro:schema";
 
 const albums = defineCollection({ 
     loader: glob({ pattern: "*.yaml" , base: "./src/albums/" }),
@@ -13,4 +14,14 @@ const albums = defineCollection({
 });
 
 
-export const collections = { albums, };
+const biography = defineCollection({
+    loader: glob({ pattern: "*.md", base: "./src/bio/" }),
+    schema: object({
+        logo: z.string(),
+        titulo: z.string(),
+        biografia: z.string(),
+        photo: z.string(),
+    })
+})
+
+export const collections = { albums, biography};

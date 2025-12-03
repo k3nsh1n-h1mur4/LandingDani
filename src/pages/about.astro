@@ -1,0 +1,26 @@
+---
+import BaseLayout from "@layouts/BaseLayout.astro";
+import Header from "@components/Header.astro";
+import Acercade from "@components/Acercade.astro";
+
+import { getCollection, getEntry, render } from "astro:content";
+
+const entry = await getEntry('biography', 'bio'); 
+if(!entry) {
+  throw new Error(`Entry not found.`);
+}
+const { Content, headings } = await render(entry);
+---
+
+<BaseLayout title="Biografía" >
+  <Header title="Biografía"/>
+  <Content />
+</BaseLayout>
+
+
+<style>
+  :root{
+    background-color: lightgray;
+  }
+  
+</style>
