@@ -35,9 +35,8 @@ import Footer from "@components/Footer.astro";
   </head>
   <body>
     <div class="main-container">
-      <Header title={title} />
-      <slot />
-      <Main />
+      <Header title={title}  />
+      <Main />  
       <Footer />
     </div>
   </body>
@@ -64,7 +63,7 @@ import Footer from "@components/Footer.astro";
     min-height: 100vh;
     display: grid;
     grid-gap: 10px;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: auto;
     grid-template-areas:
       "head head head"

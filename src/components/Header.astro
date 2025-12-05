@@ -1,14 +1,11 @@
 ---
-import BaseLayout from "@layouts/BaseLayout.astro";
 
 interface Props {
   title: string;
 }
-
 const { title } = Astro.props;
-
 ---
-<BaseLayout title="Header">
+
 <header>
   <p>Oficina Virtual
     <br />
@@ -23,7 +20,6 @@ const { title } = Astro.props;
     </ul>
   </nav>
 </header>
-</BaseLayout>
 
 
 

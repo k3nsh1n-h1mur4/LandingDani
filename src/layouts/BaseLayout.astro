@@ -1,4 +1,5 @@
 ---
+
 interface Props {
   title: string;
 }
@@ -23,12 +24,75 @@ import Footer from "@components/Footer.astro";
       href="https://fonts.googleapis.com/css2?family=Stack+Sans+Headline:wght@200..700&display=swap"
       rel="stylesheet"
     />
+    <script data-goatcounter="https://my-account.goatcounter.com/count" async src="//gc.zgo.at/count.js" />
+    <!-- Open Graph tags   -->
+     <meta property="og:title" content="Diputado Daniel Castillo"/>
+     <meta property="og:type" content="website"/>
+     <meta property="og:url" content="https://www.virtualdipdanielcastillo.com"/>
+     <meta property="og:description" content="Página Virtual Diputado Daniel Castillo"/>
+     <meta property="og:site_name" content="Diputado Daniel Castillo"/>
 
     <title>{title}</title>
   </head>
   <body>
-    <div class="main-container">
-       <slot /> 
+      <slot />
     </div>
   </body>
 </html>
+
+<style is:global>
+  html {
+    font-family: "Stack Sans Headline", sans-serif;
+  }
+  :root {
+    margin: 0;
+    width: 100%;
+    height: 100vh;
+  }
+
+  body {
+    margin: 0;
+    width: 100%;
+    height: 100vh;
+    box-sizing: content-box;
+  }
+  .main-container {
+    box-sizing: content-box;
+    min-height: 100vh;
+    display: grid;
+    grid-gap: 10px;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-areas:
+      "head head head"
+      "main main main"
+      "foter foter foter";  
+    
+  }
+
+  .main-container > header {
+    grid-area: head;
+  }
+
+  .main-container > main {
+    grid-area: main;
+  }
+
+  .main-container > footer {
+    grid-area: foter;
+  }
+
+  /*@media screen and (min-width: 768px) {
+    .main-container {
+      display: grid;
+      grid-template-columns: auto;
+      grid-template-rows: auto;
+      grid-template-areas:
+        "head head"
+        "main main"
+        "foter foter";
+    }
+  }*/
+
+</style>
+
