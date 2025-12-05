@@ -26,6 +26,16 @@ pages.map((page) => {
     }
 });
 
+export async function getStaticPaths() {
+    const pages = albums.map((album) => {
+        return {
+            params: { id: album.id },
+            props: { id: album.id, title: album.data.title, description: album.data.description, cover: album.data.cover },
+        };
+    });
+    return pages;
+}
+
 const { id, title, description, cover } = Astro.props;
 ---
 
