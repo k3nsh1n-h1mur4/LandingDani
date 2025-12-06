@@ -68,7 +68,7 @@ photo: /images/mesa7.jpeg
         display: flex;
         justify-content: center;
         align-items: center;
-        
+
     }
 
     @media screen and (max-width: 768px) {
@@ -80,9 +80,9 @@ photo: /images/mesa7.jpeg
         }
 
         .bio img {
-            width: 100px;
-            height: 100px;
-            border-radius: 20px;
+            width: 50px;
+            height: 50px;
+            border-radius: 5px;
         }
 
         .bio-pic {
