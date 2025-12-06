@@ -10,6 +10,7 @@
       "@public/*": ["./src/public/*"],
       "@lib/*": ["./src/lib/*"],
       "@helpers/*": ["./src/helpers/*"],
+      "@db/*": ["./src/db/*"],
     },
     "strictNullChecks": true,
     "allowJs": true,
