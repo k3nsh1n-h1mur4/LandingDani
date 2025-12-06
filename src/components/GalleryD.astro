@@ -76,7 +76,18 @@ pages.map((page) => {
     }
     .container-grid {
         display: grid;
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: 1fr);
         grid-gap: 5px;
+    }
+    @media screen and (min-width: 768px) {
+        .container-grid {
+            grid-template-columns: 1fr;
+        }
+    }
+    .container-grid > a {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
     }
 </style>

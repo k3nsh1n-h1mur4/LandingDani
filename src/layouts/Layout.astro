@@ -84,16 +84,11 @@ import Footer from "@components/Footer.astro";
     grid-area: foter;
   }
 
-  /*@media screen and (min-width: 768px) {
+  @media screen and (min-width: 768px) {
     .main-container {
       display: grid;
-      grid-template-columns: auto;
-      grid-template-rows: auto;
-      grid-template-areas:
-        "head head"
-        "main main"
-        "foter foter";
-    }
-  }*/
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2rem;
+  }
 
 </style>

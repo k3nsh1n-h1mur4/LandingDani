@@ -6,9 +6,13 @@ biografia: Biografía
 photo: /images/mesa7.jpeg
 
 ---
-<table>
+<div class="container">
+
+
+<!-- <table>
 <tr>
-<td>
+<td> -->
+<div class="bio">
 
 > # **Dip. Gilberto Daniel Castillo García** <img src="/images/logoDani.jpg" alt="LogotipoDaniel Castillo" width="120px"  height="120px"  /> 
 
@@ -36,10 +40,62 @@ photo: /images/mesa7.jpeg
 >>- Comisiones: Salud, Seguridad Social y Trabajo y Previsión Social, en está última ostenta la posición de secretario.
 >
 >>- **Grupo de amistad:** 🇺🇸 Estados Unidos, 🇳🇴Noruega y 🇵🇦Panamá. 
-</td>
+</div>
+<!-- </td>
 <td>
 <img src="/images/mesa7.jpeg" alt="Perfil Daniel Castillo" width="720px"  height="820px" />
 </td>
-</tr>
-</table>
+</tr> -->
+<div class="bio-pic">
+<img src="/images/mesa7.jpeg" alt="Perfil Daniel Castillo" width="720px"  height="820px" />
+</div>
+<!-- </table> -->
+</div>
+
+<style>
+    .container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 10px;
+    }
+    .container img:first-child(1) {
+        width: 100%;
+        height: 100%;
+        border-radius: 20px;
+    }
+
+    .bio-pic  {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        
+    }
+
+    @media screen and (max-width: 768px) {
+        .container {
+            display: grid;
+            grid-template-columns: 1fr;
+            grid-direction: column;
+            grid-gap: 10px;
+        }
+
+        .bio img {
+            width: 100px;
+            height: 100px;
+            border-radius: 20px;
+        }
+
+        .bio-pic {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .bio-pic img {
+            width: 450px;
+            height: 650px;;
+            border-radius: 20px;
+        }
+    }
+</style>
 
