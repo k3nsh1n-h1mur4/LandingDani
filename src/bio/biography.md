@@ -18,7 +18,7 @@ photo: /images/mesa7.jpeg
 
 >>### *Biografía*
 
-> 🧑‍💼 **Datos personales.**
+>  🤵🏽  **Datos personales.**
 >- **Diputado Federal por la vía de representación proporcional.**
 >>- **Pertence al Partido Morena**
 >>- **Representa la Circunscripción 1.**
