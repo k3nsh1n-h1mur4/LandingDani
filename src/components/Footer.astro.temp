@@ -1,0 +1,22 @@
+---
+
+---
+
+<footer>
+  <img src="/images/infoDani.jpg" alt="Información de Dani">
+</footer>
+
+
+<style>
+  footer {
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  footer img {
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+  }
+</style>

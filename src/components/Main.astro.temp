@@ -1,0 +1,49 @@
+---
+---
+
+<main>
+    <div class="logoCamara">
+        <img src="/images/logoc.jpg" alt="Logo de camara" />
+    </div>
+    <div class="mainDani">
+        <img src="/images/dani.webp" alt="Principal" />
+    </div>
+</main>
+
+<style>
+    main {
+        min-height: 100vh;
+        display: grid;
+        grid-gap: 10px;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: 1fr;
+    }
+
+    .main logoCamara {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .logoCamara img {
+        width: 100%;
+        height: 100%;
+        border-radius: 20px;
+    }
+
+    .main mainDani {
+        width: 50vw;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .mainDani img {
+        width: 100%;
+        height: 100%;
+        border-radius: 20px;
+    }
+
+</style>
+
+

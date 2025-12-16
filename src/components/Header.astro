@@ -1,97 +1,46 @@
 ---
-
-interface Props {
-  title: string;
-}
-const { title } = Astro.props;
+import  Layout  from "@layouts/Layout.astro";
 ---
 
-<header>
-  <p>Oficina Virtual
-    <br />
-    Dip. Gilberto Daniel Castillo García
-  </p>
-  <img src="/images/morenalogo.webp" alt="Logo de morena">
-  <nav>
-    <ul>
-      <li><a href="/albums/gallery">Galería</a></li>
-      <li><a href="/about">Acerca de</a></li>
-      <li><a href="#">Contacto</a></li>
-    </ul>
-  </nav>
-</header>
-
-
-
+<div class="container-header">
+    <img src="/public/logoCamara.png" alt="Logo de dani" height="100px" width="450px" />
+    <h2>Dip. Gilberto Daniel Castillo García</h2>
+    <div class="menu">
+        <a href="/">Inicio</a>
+        <a href="/albums/gallery">Galería</a>
+        <a href="/about">Acerca de</a>
+        <a href="#">Contacto</a>
+    </div>
+</div>
 
 <style>
-  header {
-    background-color: #6d0c2e;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-  }
-  header img {
-    width: 150px;
-    height: 150px;
-  }
+    .container-header {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+    .container-header p {
+        color: #6d0c2e;
+        font-size: 25px;
+    }
+    .menu {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: row;
+    }
+    .menu a {
+        display: inline-block;
+        padding: 10px;
+        text-decoration: none;
+        color: #000;
+        font-size: 1.5rem;
+        border-top: #000 1px solid;
+        border-bottom: #000 1px solid;
+    }
 
-  header p {
-    color: lightgray;
-    font-size: 1.5rem;
-    margin-left: 10px;
-  }
-
-  header nav ul {
-    display: flex;
-    flex-direction: row wrap;
-    list-style: none;
-  }
-
-  header nav ul li {
-    padding: 5px;
-    /*background-color: lightgray;*/
-  }
-
-  header nav ul li a {
-    display: inline-block;
-    padding: 10px;
-    text-decoration: none;
-    color: lightgray;
-    font-size: 1.5rem;
-  }
-
-  @media (max-width: 768px) {
-    header {
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      /*height: 100vh;*/
+    .menu a:hover {
+        color: red;
     }
-    header img {
-      width: 100px;
-      height: 100px;
-    }
-    header p {
-      display: none;
-    }
-    header nav ul {
-      flex-direction: row;
-      align-items: center;
-      justify-content: center;
-    }
-    header nav ul li {
-      padding: 5px;
-      background-color: none;
-    }
-    header nav ul li a {
-      display: inline-block;
-      padding: 0px;
-      text-decoration: none;
-      color: lightgray;
-      font-size: 1.5rem;
-    }
-  
 </style>

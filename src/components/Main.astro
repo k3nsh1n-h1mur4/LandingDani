@@ -1,49 +1,110 @@
----
----
+
 
 <main>
-    <div class="logoCamara">
-        <img src="/images/logoc.jpg" alt="Logo de camara" />
+    <div class="intro">
+        <div class="morena">
+            <img src="/public/logoMorena.png" alt="Logo Morena" />
+        </div>
+        <div class="introduction">
+            <p>Como diputado federal, la misión principal de Gilberto Daniel Castillo García es:</p>
+                <p>Legislar y supervisar al Poder Ejecutivo, participando en la creación, análisis, discusión y aprobación de leyes que impactan en políticas públicas a nivel nacional. Esto incluye proponer iniciativas, participar en las sesiones del Pleno, y evaluar políticas públicas vigentes. 
+               <p>
+                   Representar a la ciudadanía, particularmente de la Circunscripción 1, que incluye varios estados del país, ejerciendo su cargo bajo el principio de representación proporcional y no por distrito uninominal. 
+               </p>
+                
+               <p>
+                   Comisiones y responsabilidades específicas:
+                </p>
+                <p>
+                    Como parte de su labor parlamentaria, desempeña funciones en varias comisiones ordinarias, donde contribuye en áreas clave de política pública:
+                    
+                    <p>
+                        Comisión de Trabajo y Previsión Social: donde funge como secretario, participando en dictámenes y análisis de iniciativas relacionadas con condiciones laborales y seguridad social. <br/>
+                        Comisión de Salud: donde contribuye al análisis de políticas de salud pública y atención médica. <br/>
+                        Comisión de Seguridad Social: que revisa temas de protección social y sistemas de seguridad social en México.
+                    </p>
+                </p>
+        </div>
     </div>
-    <div class="mainDani">
-        <img src="/images/dani.webp" alt="Principal" />
+    <div class="principal-foto">
+        <img src="/images/dani.webp" alt="Principal" width="100px"/>
     </div>
 </main>
 
 <style>
     main {
-        min-height: 100vh;
+        margin-top: 20px;
         display: grid;
-        grid-gap: 10px;
-        grid-template-columns: repeat(2, 1fr);
-        grid-template-rows: 1fr;
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 5px;
+        grid-template-areas: 
+            "intro"
+            "principal-foto";
     }
-
-    .main logoCamara {
+    h1 {
+        font-size: 2.5rem;
+        color: #6d0c2e;
+    }
+    .intro {
+        display: grid;
+        justify-content: center;
+        align-items: center;
+        grid-area: intro;
+    }
+    .morena {
+        height: 100px;
+    }
+    .morena p {
+        padding: 10px;
+    }
+    .morena img {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 50%;
+        height: 100px;
+        opacity: 0.5;
+    }
+    .principal-foto {
         display: flex;
         justify-content: center;
         align-items: center;
     }
-    .logoCamara img {
-        width: 100%;
-        height: 100%;
-        border-radius: 20px;
+    .principal-foto img {
+        width: 450px;
+        height: 500px;
+    }
+    .introduction p:first-child {
+        text-align: center;
     }
 
-    .main mainDani {
-        width: 50vw;
-        height: 100vh;
-        display: flex;
-        justify-content: center;
-        align-items: center;
+    .introduction p:nth-child(2) {
+        text-align: left;
+        margin-left: 20px;
+    }
+    .introduction p:nth-child(3) {
+        text-align: left;
+        margin-left: 20px;
     }
 
-    .mainDani img {
-        width: 100%;
-        height: 100%;
-        border-radius: 20px;
+    .introduction p:nth-child(4) {
+        text-align: left;
+        margin-left: 20px;
+    }
+    .introduction p:nth-child(5) {
+        text-align: left;
+        margin-left: 20px;
+    }
+    .introduction p:nth-child(6) {
+        text-align: left;
+        margin-left: 20px;
     }
 
+    @media screen and (max-width: 768px) {
+        main {
+            display: grid;
+            grid-template-columns: 1fr;
+            grid-gap: 5px;
+        }
+    }
 </style>
-
-

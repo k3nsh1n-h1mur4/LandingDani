@@ -6,9 +6,8 @@ interface Props {
 
 const { title } = Astro.props;
 
-import Header from "@components/Header.astro";
-import Main from "@components/Main.astro";
-import Footer from "@components/Footer.astro";
+import Header1 from "@components/Header1.astro";
+import Footer1 from "@components/Footer1.astro";
 ---
 
 <!doctype html>
@@ -35,7 +34,9 @@ import Footer from "@components/Footer.astro";
     <title>{title}</title>
   </head>
   <body>
+    <div class="container">
       <slot />
+    </div>
   </body>
 </html>
 
@@ -51,47 +52,31 @@ import Footer from "@components/Footer.astro";
 
   body {
     margin: 0;
-    width: 100%;
-    height: 100vh;
     box-sizing: content-box;
   }
-  .main-container {
-    box-sizing: content-box;
+  .container {
     min-height: 100vh;
+    box-sizing: content-box;
     display: grid;
-    grid-gap: 10px;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr;
-    grid-template-areas:
-      "head head head"
-      "main main main"
-      "foter foter foter";  
-    
+    grid-template-rows:  auto 1fr auto;
+    grid-template-areas: 
+      "head"
+      "principal"
+      "foot";
   }
 
-  .main-container > header {
+  .head {
     grid-area: head;
+    background-color: aqua;
   }
-
-  .main-container > main {
-    grid-area: main;
+  .principal {
+    grid-area: principal;
   }
-
-  .main-container > footer {
-    grid-area: foter;
+  .foot {
+    grid-area: foot;
+    background-color: red;
   }
-
-  /*@media screen and (min-width: 768px) {
-    .main-container {
-      display: grid;
-      grid-template-columns: auto;
-      grid-template-rows: auto;
-      grid-template-areas:
-        "head head"
-        "main main"
-        "foter foter";
-    }
-  }*/
+  
 
 </style>
 
