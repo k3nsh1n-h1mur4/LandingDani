@@ -1,10 +1,14 @@
 ---
-import BaseLayout from "@layouts/BaseLayout.astro";
+import Header from "@components/Header.astro";
+import Footer from "@components/Footer.astro";
 import Mail from "@components/Mail.astro";
+import LayoutAbout from "@layouts/LayoutAbout.astro";
 ---
 
 
-<BaseLayout title="Buzon de Sugerencias">
+<LayoutAbout title="Buzon de Sugerencias">
+    <Header />
     <Mail />
-</BaseLayout>
+    <Footer />
+</LayoutAbout>
 

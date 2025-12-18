@@ -1,5 +1,6 @@
 ---
 import { actions } from "astro:actions";
+import { supabase } from "@helpers/SUpabaseClient.js";
 ---
 
 <div class="container">
@@ -7,7 +8,7 @@ import { actions } from "astro:actions";
         <label for="userName">Nombre Completo</label>
         <input
             type="text"
-            name="userName"
+            name="name"
             id=""
             placeholder="Nombre Completo"
         />
@@ -19,6 +20,24 @@ import { actions } from "astro:actions";
         <button type="submit">Enviar</button>
     </form>
 </div>
+
+<script>
+    import { actions } from "astro:actions";
+    
+    const form = document.querySelector("form");
+    form?.addEventListener("submit", async (e) => {
+        e.preventDefault();
+        const formData = new FormData(form);
+        const { data, error } = await actions.sendMail(formData);
+        console.log(data)
+        if (data) {
+            alert("Mensaje enviado correctamente");
+        }
+        form.reset();
+        
+    });
+</script>
+
 
 <style>
     .container {
@@ -61,17 +80,3 @@ import { actions } from "astro:actions";
     }
 </style>
 
-<script>
-    import { actions } from "astro:actions";
-
-    const sender = document.querySelector("button");
-    const form = document.querySelector("form");
-    form?.addEventListener("submit", async (e) => {
-        e.preventDefault();
-        const formData = new FormData(form, sender);
-        const res = await actions.sendMail(formData);
-        const { error } = await actions.sendMail(formData);
-        if (!error) console.log(formData);
-        return res;
-    });
-</script>
