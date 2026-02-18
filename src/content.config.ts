@@ -24,4 +24,4 @@ const biography = defineCollection({
     })
 })
 
-export const collections = { albums, biography};
+export const collections = { albums, biography };

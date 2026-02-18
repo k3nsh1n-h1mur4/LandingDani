@@ -9,6 +9,7 @@
       "@pages/*": ["./src/pages/*"],
       "@public/*": ["./src/public/*"],
       "@helpers/*": ["./src/helpers/*"],
+      "@utils/*": ["./src/utils/*"],
     },
     "strictNullChecks": true,
     "allowJs": true,

@@ -28,6 +28,9 @@ import { supabase } from "@helpers/SUpabaseClient.js";
     form?.addEventListener("submit", async (e) => {
         e.preventDefault();
         const formData = new FormData(form);
+        const name = formData.get("name");
+        const email = formData.get("email");
+        const message = formData.get("message");
         const { data, error } = await actions.sendMail(formData);
         console.log(data)
         if (data) {

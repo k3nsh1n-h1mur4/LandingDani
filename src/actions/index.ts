@@ -1,6 +1,7 @@
 import { defineAction, ActionError } from "astro:actions";
 import { z } from "astro:schema";
 import { supabase } from "@helpers/SUpabaseClient.js";
+import { cryptEmail } from "@utils/CryptEmail.js";
 
 
 export const server = {
@@ -11,7 +12,11 @@ export const server = {
             email: z.string().email(),
             message: z.string()
         }),
-        handler: async ({ name, email, message }) => {
+        handler: async ( input ) => {
+            const name = input.name;
+            const email = await cryptEmail(input.email);
+            const message = input.message;
+            console.log(email)
             const {  error } = await supabase.from('buzon').insert({
                 name: name,
                 email: email,

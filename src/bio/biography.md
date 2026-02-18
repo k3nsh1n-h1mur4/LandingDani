@@ -70,6 +70,14 @@ photo: /images/mesa7.jpeg
         align-items: center;
     }
 
+    .bio-pic img {
+        width: 100%;
+        height: 760px;
+        border-radius: 20px;
+        object-fit: contain;
+    }
+
+
     @media screen and (max-width: 768px) {
         .container {
             display: grid;
@@ -88,6 +96,7 @@ photo: /images/mesa7.jpeg
             display: flex;
             justify-content: center;
             align-items: center;
+            object-fit: contain;
         }
 
         .bio-pic img {
@@ -95,6 +104,7 @@ photo: /images/mesa7.jpeg
             height: 600px;;
             border-radius: 20px;
             padding: 10px;
+            object-fit: contain;
         }
     }
 </style>

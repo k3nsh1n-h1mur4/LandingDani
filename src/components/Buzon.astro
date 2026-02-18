@@ -1,0 +1,74 @@
+---
+interface Props {
+  title: string;
+  datos: object;
+}
+
+const { title, datos  } = Astro.props;
+---
+
+<div class="container">
+    <table>
+        <head>
+        <tr class="table-header">
+            <th>Nombre</th>
+            <th>Email</th>
+            <th>Mensaje</th>    
+        </tr> 
+        </head>
+        <tbody>
+            <tr class="table-body">
+             { 
+                datos.map( dt => {
+                console.log(dt.name)
+                    return (
+                        <td>{dt.name}</td>
+                        <td>{dt.email}</td>
+                        <td>{dt.message}</td>
+                    )
+               }) 
+             }
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+
+<style>
+    .container {
+        display: flex;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 15px;
+    }
+    table {
+        width: 50%;
+        height: 100%;
+        border-collapse: collapse;
+        border-spacing: 0;
+        margin: 0;
+        padding: 0;
+        border: 1px solid #000;
+    }    
+    .table-header {
+        background-color: #002600;
+        color: #fff;
+    } 
+    .table-header th {
+        text-align: center;
+    }
+    th, td {
+        padding: 10px;
+        text-align: left;
+    }
+    .table-body {
+        background-color: #fff;
+        color: #000;
+    }
+    .table-body td {
+        text-align: center;
+    }
+</style>
