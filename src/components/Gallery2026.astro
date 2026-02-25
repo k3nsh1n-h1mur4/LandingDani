@@ -19,16 +19,14 @@ const albums = await getCollection("galeria");
         <h1>Galería</h1>
         <a href="/albums/gallery">Galería 2025</a>
         <a href="/albums/galeria">Galería 2026</a>
+          <p>
+            <span>Si, a la reducción de 47 a 40 horas semanales con aplicación gradual de 2026 a 2030. <br/></span>
+            <span>No, a la reducción de sueldos, salarios ni prestaciones. <br/></span>
+            <span>Si, a las horas límite de 11 por semanay hasta 4 horas diarias. <br/></span>
+            <span>No, a que las personas menores de 17 años laboren tiempo extraordinario. <br/></span>
+          </p>
     </div>
     
-    <div class="legend">
-      <p>
-        <span>Si, a la reducción de 48 a 40 horas semanales con aplicación gradual de 2026 a 2030. <br/></span>
-        <span>No, a la reducción de sueldos, salarios ni prestaciones. <br/></span>
-        <span>Si, a las horas límite de 12 por semanay hasta 4 horas diarias. <br/></span>
-        <span>No, a que las personas menores de 18 años laboren tiempo extraordinario. <br/></span>
-      </p>
-    </div>
     
     <div class="masonry-grid">
       {
@@ -58,16 +56,13 @@ const albums = await getCollection("galeria");
 
 
 <style>
-  .legend {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 20px;
-    background-color: #6d0c2e;
-    color: #fff;
-    width: fit-content;
-  }  
 
+  .container p {
+    background-color: #6d0c2e;
+    color:#fff;
+    font-size: 20px;
+    padding: 20px;
+  }
 
     .title {
         text-align: center;
