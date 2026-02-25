@@ -1,0 +1,164 @@
+---
+import { Image } from "astro:assets";
+import { getCollection } from "astro:content";
+import Layout from "@layouts/Layout.astro";
+import Header from "@components/Header.astro";
+import BaseLayout from "@layouts/BaseLayout.astro";
+
+
+const albums = await getCollection("galeria");
+
+---
+
+<BaseLayout title="Galeria">
+    <Header />
+
+
+    <div class="container">
+      <div class="title">
+        <h1>Galería</h1>
+        <a href="/albums/gallery">Galería 2025</a>
+        <a href="/albums/galeria">Galería 2026</a>
+    </div>
+    
+    <div class="legend">
+      <p>
+        <span>Si, a la reducción de 48 a 40 horas semanales con aplicación gradual de 2026 a 2030. <br/></span>
+        <span>No, a la reducción de sueldos, salarios ni prestaciones. <br/></span>
+        <span>Si, a las horas límite de 12 por semanay hasta 4 horas diarias. <br/></span>
+        <span>No, a que las personas menores de 18 años laboren tiempo extraordinario. <br/></span>
+      </p>
+    </div>
+    
+    <div class="masonry-grid">
+      {
+        albums.map((page, index) => (
+          <a 
+            href={`/albums/${page.id}`} 
+            class="masonry-item fade-in"
+            style={`animation-delay: ${index * 0.08}s`}
+          >
+            <Image
+              src={page.data.cover}
+              alt={page.data.title}
+              width={600}
+              height={800}
+              class="masonry-img"
+            />
+            <div class="overlay">
+              <h3>{page.data.title}</h3>
+            </div>
+          </a>
+        ))
+      }
+    </div>
+</div>
+</BaseLayout>
+
+
+
+<style>
+  .legend {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+    background-color: #6d0c2e;
+    color: #fff;
+    width: fit-content;
+  }  
+
+
+    .title {
+        text-align: center;
+    }
+
+    .title a {
+        padding: 5px;
+        text-decoration: None; 
+        font-size: 25px;
+        color: red;
+    }
+
+    .masonry-grid {
+        margin-top: 15px;
+        column-count: 4;          /* 4 columnas dinámicas */
+        column-gap: 20px;         /* espacio horizontal */
+        max-width: 1400px;
+        margin: 0 auto;
+    }
+
+    .masonry-item {
+        position: relative;
+        display: inline-block;
+        width: 100%;
+        margin-bottom: 20px;      /* espacio vertical */
+        overflow: hidden;
+        border-radius: 12px;
+        opacity: 0;
+        transform: translateY(20px);
+        animation: fadeInUp 0.6s ease forwards;
+    }
+
+    .masonry-img {
+        width: 100%;
+        height: auto;
+        display: block;
+        border-radius: 12px;
+        transition: transform 0.4s ease;
+    }
+
+    /* Hover */
+    .masonry-item:hover .masonry-img {
+        transform: scale(1.05);
+    }
+
+    /* Overlay */
+    .overlay {
+        position: absolute;
+        inset: 0;
+        background: rgba(0,0,0,0.4);
+        color: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+        text-align: center;
+        padding: 10px;
+    }
+
+    .masonry-item:hover .overlay {
+        opacity: 1;
+    }
+
+    /* Animación */
+    @keyframes fadeInUp {
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    /* Responsive */
+    @media (max-width: 1200px) {
+        .masonry-grid {
+            column-count: 3;
+        }
+    }
+
+    @media (max-width: 768px) {
+        .masonry-grid {
+            column-count: 2;
+        }
+    }
+
+    @media (max-width: 500px) {
+        .masonry-grid {
+            column-count: 1;
+        }
+    }
+
+
+</style>
+

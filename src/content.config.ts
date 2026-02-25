@@ -24,4 +24,15 @@ const biography = defineCollection({
     })
 })
 
-export const collections = { albums, biography };
+const galeria = defineCollection({ 
+    loader: glob({ pattern: "*.md" , base: "./src/content/2026" }),
+    //type: "data",
+    schema: ({ image }) =>  
+        z.object({
+            title: z.string(),
+            cover: image(),
+            coverAlt: z.string(),
+        })  
+});
+
+export const collections = { albums, biography, galeria };
