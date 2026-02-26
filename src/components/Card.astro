@@ -5,7 +5,7 @@ import BaseLayout from '@layouts/BaseLayout.astro'
 <BaseLayout title='Card'>
   <div class="card">
     <div class="title">
-      <a href="#">Galeria</a>
+      <a href="/albums/gallery">Galeria</a>
     </div>
     <div class="image">
       <img src="../../public/images/dani.jpg" alt="Daniel">
@@ -16,7 +16,7 @@ import BaseLayout from '@layouts/BaseLayout.astro'
 <style>
   .card {
     border: 1px dashed;
-    width: 250px;
+    width: 500px;
   }
   
   .title {
@@ -34,8 +34,6 @@ import BaseLayout from '@layouts/BaseLayout.astro'
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 300px;
-    padding: 20px;
   }
 
   .image img {
