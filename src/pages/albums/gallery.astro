@@ -1,7 +1,31 @@
 ---
-import Layout from "@layouts/Layout.astro";
+import BaseLayout from "@layouts/BaseLayout.astro";
 import Header from "@components/Header.astro";
-import GalleryD  from "@components/GalleryD.astro";
+import Footer from "@components/Footer.astro";
 ---
 
-<GalleryD />
+<BaseLayout title="Galeria">
+    <Header />
+    <div class="cont">
+      <div class="title">
+        <a href="#">Galería 2025</a>
+        <a href="#">Galería 2026</a>
+	  </div>
+    </div>
+	<Footer />
+</BaseLayout>
+
+<style>
+.title {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 10px;
+	margin-top: 20px;
+}
+
+.title a {
+	text-decoration: none;
+}
+</style>
+
