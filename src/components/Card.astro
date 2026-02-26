@@ -1,21 +1,29 @@
 ---
+interface Props {
+  title: string,
+  image: string,
+}
+
 import BaseLayout from '@layouts/BaseLayout.astro'
+
+const { title, image } = Astro.props;
+
 ---
 
 <BaseLayout title='Card'>
   <div class="card">
     <div class="title">
-      <a href="/albums/gallery">Galeria</a>
+      <a href="/albums/gallery">Galeria {title}</a>
     </div>
     <div class="image">
-      <img src="../../public/images/dani.jpg" alt="Daniel">
+      <img src={image} alt="Daniel">
     </div>
   </div>
 </BaseLayout>
 
 <style>
   .card {
-    border: 1px dashed;
+    /* border: 1px dashed; */
     width: 500px;
   }
   

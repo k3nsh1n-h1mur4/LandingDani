@@ -1,0 +1,25 @@
+---
+import BaseLayout from "@layouts/BaseLayout.astro";
+import Header from "@components/Header.astro";
+import Footer from "@components/Footer.astro";
+import Card  from "@components/Card.astro";
+---
+<BaseLayout title="Galerías">
+  <Header />
+  <div class="main">
+    <Card title="2025" image="../../public/images/mesa4.jpg" />
+    <Card title="2026" image="../../public/images/19.jpeg" />
+  </div>
+  <Footer />
+
+</BaseLayout>
+
+
+<style>
+  .main {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+</style>
