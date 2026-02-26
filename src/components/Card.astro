@@ -1,0 +1,46 @@
+---
+import BaseLayout from '@layouts/BaseLayout.astro'
+---
+
+<BaseLayout title='Card'>
+  <div class="card">
+    <div class="title">
+      <a href="#">Galeria</a>
+    </div>
+    <div class="image">
+      <img src="../../public/images/dani.jpg" alt="Daniel">
+    </div>
+  </div>
+</BaseLayout>
+
+<style>
+  .card {
+    border: 1px dashed;
+    width: 250px;
+  }
+  
+  .title {
+    text-align: center;
+    padding: 10px;
+    margin-top: 10px;
+  }
+  .title a {
+    text-decoration: none;
+    color: red;
+    font-size: 20px;
+  }
+
+  .image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 300px;
+    padding: 20px;
+  }
+
+  .image img {
+    width: 80%;
+    display: block;
+    margin: auto 0;
+  }
+</style>
