@@ -1,5 +1,18 @@
 ---
 import  Layout  from "@layouts/Layout.astro";
+
+
+
+export function getStaticPaths() {
+	return [
+		{ params: { albums: "gallery" } },
+		{ params: { albums: "galeria" } },
+	]
+}
+
+const { albums } = Astro.params;
+
+
 ---
 
 <div class="container-header">
@@ -7,7 +20,7 @@ import  Layout  from "@layouts/Layout.astro";
     <h2>Dip. Gilberto Daniel Castillo García</h2>
     <div class="menu">
         <a href="/">Inicio</a>
-        <a href="/albums/gallery">Galería</a>
+        <a href="/albums/{params}">Galería</a>
         <a href="/about">Acerca de</a>
         <a href="/sendMail">Contacto</a>
     </div>

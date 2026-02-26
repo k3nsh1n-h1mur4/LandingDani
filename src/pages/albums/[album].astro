@@ -1,0 +1,16 @@
+---
+
+export function getStaticPaths() {
+	return [
+		{ params: { album: '2025' }},
+		{ params: { album: '2026' }},
+	];
+}
+
+const { album } = Astro.params;
+
+---
+
+<div>
+ <h2> Album {album}</h2>
+</div>
