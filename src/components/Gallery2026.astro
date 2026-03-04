@@ -8,6 +8,13 @@ import BaseLayout from "@layouts/BaseLayout.astro";
 
 const albums = await getCollection("galeria");
 
+/*export function getStaticPaths() {
+    return [
+        { params: {}}
+    ]
+}*/
+
+
 ---
 
 <BaseLayout title="Galeria">
@@ -32,10 +39,10 @@ const albums = await getCollection("galeria");
       {
         albums.map((page, index) => (
           <a 
-            href={`/albums/${page.id}`} 
+            href={`/albums/${page.title}`} 
             class="masonry-item fade-in"
             style={`animation-delay: ${index * 0.08}s`}
-          >
+          > 
             <Image
               src={page.data.cover}
               alt={page.data.title}
