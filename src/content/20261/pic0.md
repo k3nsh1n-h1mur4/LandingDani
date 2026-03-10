@@ -1,0 +1,1 @@
+['---\n', 'title: "Galeria foto 1"\n', 'cover: ./1.jpeg\n', 'coverAlt: "Fotogaleria aprobacion 40 hrs"\n', '---']
