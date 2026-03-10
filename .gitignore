@@ -27,3 +27,6 @@ pnpm-debug.log*
 .env
 .envpython
 .env.local
+
+entreText.py
+createMDs.sh
