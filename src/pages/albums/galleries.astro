@@ -3,13 +3,18 @@ import BaseLayout from "@layouts/BaseLayout.astro";
 import Header from "@components/Header.astro";
 import Footer from "@components/Footer.astro";
 import Card  from "@components/Card.astro";
+import ComisionSalud  from "@components/ComisionSalud.astro";
+
 ---
 <BaseLayout title="Galerías">
   <Header />
   <div class="main">
     <Card title="2025" image="/images/mesa4.jpg" gal="/albums/galeria2025" />
     <Card title="2026" image="/images/19.jpeg" gal="/albums/galeria" />
+    <span>Comison de Salud</span>
   </div>
+
+  <ComisionSalud />
   <Footer />
 
 </BaseLayout>
@@ -18,8 +23,22 @@ import Card  from "@components/Card.astro";
 <style>
   .main {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
   }
+  
+  .cms img:hover {
+    transition: .5s ease;
+    opacity: 0.3;
+  }
+
+
+  span {
+    text-align: center;
+    font-size: 30px;
+    color: red;
+  }
 </style>
+
+

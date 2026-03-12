@@ -55,3 +55,12 @@ const { title, image, gal } = Astro.props;
     margin: auto 0;
   }
 </style>
+
+
+<script>
+  const file = document.querySelector('button');
+  file.addEventListener('click', e => {
+    e.preventDefault();
+    console.log("Hola JS");
+  })
+</script>
