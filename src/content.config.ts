@@ -35,4 +35,25 @@ const galeria = defineCollection({
         })  
 });
 
-export const collections = { albums, biography, galeria };
+const comisionSalud = defineCollection({ 
+    loader: glob({ pattern: "*.md" , base: "./src/content/comisionsalud" }),
+    //type: "data",
+    schema: ({ image }) =>  
+        z.object({
+            title: z.string(),
+            cover: image(),
+            coverAlt: z.string(),
+        })  
+});
+
+const comisionPrevision = defineCollection({ 
+    loader: glob({ pattern: "*.md" , base: "./src/content/comisionprevision" }),
+    //type: "data",
+    schema: ({ image }) =>  
+        z.object({
+            title: z.string(),
+            cover: image(),
+            coverAlt: z.string(),
+        })  
+});
+export const collections = { albums, biography, galeria, comisionSalud, comisionPrevision };
