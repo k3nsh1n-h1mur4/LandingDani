@@ -1,7 +1,7 @@
 import { defineAction, ActionError } from "astro:actions";
 import { z } from "astro:schema";
 import { cryptEmail } from "@utils/CryptEmail.js";
-import { turso } from '../turso.ts';
+import { client } from '../lib/tursoDb.ts';
 
 export const server = {
     sendMail: defineAction({
@@ -16,7 +16,7 @@ export const server = {
             const email = await cryptEmail(input.email);
             const message = input.message;
             console.log(email)
-            const result = await turso.batch(
+            const result = await client.batch(
                 [
                     {
                         sql: 'INSERTO INTO buzon(name, email, message) VALUES(?, ?, ?)',
