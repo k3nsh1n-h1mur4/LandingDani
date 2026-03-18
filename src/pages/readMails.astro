@@ -2,27 +2,29 @@
 import LayoutAbout from "@layouts/LayoutAbout.astro";
 import Header from "@components/Header.astro";
 import Footer from "@components/Footer.astro";
-import  Buzon from "@components/Buzon.astro";
+import Buzon from "@components/Buzon.astro";
 
 import { supabase } from "@helpers/SUpabaseClient.js";
 
-export const { data, error } = await supabase.from('buzon').select('*');
+export const { data, error } = await supabase.from("buzon").select("*");
 const { name, email, message } = data;
-
 
 const dt = data.map((datos) => {
     return {
         name: datos.name,
         email: datos.email,
         message: datos.message,
-    }
-})
-console.log(typeof(dt))
+    };
+});
+console.log(typeof dt);
 ---
-
 
 <LayoutAbout title="Buzon de Sugerencias">
     <Header />
+<<<<<<< HEAD
     <Buzon title="Leer Buzón"  datos={data} />
+=======
+    <Buzon title="Leer Buz´ón" datos={data} />
+>>>>>>> refs/remotes/origin/main
     <Footer />
 </LayoutAbout>

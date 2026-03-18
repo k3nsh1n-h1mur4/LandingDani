@@ -6,28 +6,7 @@ import Layout from "@layouts/Layout.astro";
 
 const albums = await getCollection("albums");
 console.log(albums);
-/*export function getStaticPaths() {
-  albums.map((album) => {
-    console.log(album.id);
-    return  {
-        params: {id: album.id},
-    }
-  });
-}*/
 
-/*const pages = albums.map((album) => {
-    return  album;
-  //console.log(album.id);
-  //console.log(album.data.title);
-});
-
-pages.map((page) => {
-    console.log(page.id);
-    return {
-        params: {id: page.id},
-    }
-});
-*/
 export async function getStaticPaths() {
     const pages = albums.map((album) => {
         return {
@@ -48,24 +27,23 @@ const { id, title, description, cover } = Astro.props;
     </div>
     <div class="container-grid">
         {
-            
-            albums.map((page) => (
-                <a href={`/albums/${page.id}`} class="group transition-all mb-4 block">
-                    <Image
-                        src={page.data.cover}
-                        alt={page.data.title}
-                        width={720}
-                        quality="mid"
-                        class:list={[
-                            "rounded-lg transition-all",
-                            "group-hover:shadow-lg group-hover:opacity-90",
-                        ]}
-                    />
-                </a>
-                    <div class="mt-4 text-center text-neutral-700">
-                        <p class="text-xs">{page.data.description}</p>
-                    </div> 
-            ))
+        albums.map((page) => (
+            <a href={`/albums/${page.id}`} class="group transition-all mb-4 block">
+                <Image
+                    src={page.data.cover}
+                    alt={page.data.title}
+                    width={720}
+                    quality="mid"
+                    class:list={[
+                        "rounded-lg transition-all",
+                        "group-hover:shadow-lg group-hover:opacity-90",
+                    ]}
+                />
+            </a>
+            <div class="mt-4 text-center text-neutral-700">
+                <p class="text-xs">{page.data.description}</p>
+            </div> 
+        ))
         }
     </div>
 </div>
