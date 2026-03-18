@@ -11,8 +11,8 @@
   "dependencies": {
     "@astrojs/cloudflare": "^12.6.12",
     "@libsql/client": "^0.17.0",
-    "@supabase/ssr": "^0.8.0",
-    "@supabase/supabase-js": "^2.86.0",
+    "@supabase/ssr": "^0.9.0",
+    "@supabase/supabase-js": "^2.99.2",
     "@tailwindcss/vite": "^4.1.17",
     "astro": "^5.18.0",
     "bcryptjs": "^3.0.3",
