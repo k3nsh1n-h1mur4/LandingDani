@@ -1,0 +1,22 @@
+---
+import LayoutAbout from "@layouts/LayoutAbout.astro";
+import Header from "@components/Header.astro";
+import Footer from "@components/Footer.astro";
+import Buzon from "@components/Buzon.astro";
+
+import { turso } from "../turso.ts";
+
+const { rows } = await turso.execute('SELECT * FROM buzon');
+console.log(rows)
+
+const { name, email, message } = rows;
+
+---
+
+<LayoutAbout title="Buzon de Sugerencias">
+    <Header />
+    <Buzon title="Leer Buzón"  datos={rows} />
+    <Buzon title="Leer Buzón" datos={rows} />
+    <Footer />
+</LayoutAbout>
+---

@@ -4,7 +4,7 @@ import Header from "@components/Header.astro";
 import Footer from "@components/Footer.astro";
 import Buzon from "@components/Buzon.astro";
 
-import { supabase } from "@helpers/SUpabaseClient.js";
+//import { supabase } from "@helpers/SUpabaseClient.js";
 
 export const { data, error } = await supabase.from("buzon").select("*");
 const { name, email, message } = data;
@@ -22,6 +22,5 @@ console.log(typeof dt);
 <LayoutAbout title="Buzon de Sugerencias">
     <Header />
     <Buzon title="Leer Buzón"  datos={data} />
-    <Buzon title="Leer Buz´ón" datos={data} />
     <Footer />
 </LayoutAbout>
