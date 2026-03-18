@@ -1,6 +1,5 @@
 import { defineAction, ActionError } from "astro:actions";
 import { z } from "astro:schema";
-//import { supabase } from "@helpers/SUpabaseClient.js";
 import { cryptEmail } from "@utils/CryptEmail.js";
 import { turso } from '../turso.ts';
 
@@ -17,7 +16,6 @@ export const server = {
             const email = await cryptEmail(input.email);
             const message = input.message;
             console.log(email)
-            //const {  error } = await supabase.from('buzon').insert({
             const result = await turso.batch(
                 [
                     {
