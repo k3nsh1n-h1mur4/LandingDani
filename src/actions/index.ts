@@ -1,6 +1,6 @@
 import { defineAction, ActionError } from "astro:actions";
 import { z } from "astro:schema";
-import { supabase } from "@helpers/SUpabaseClient.js";
+//import { supabase } from "@helpers/SUpabaseClient.js";
 import { cryptEmail } from "@utils/CryptEmail.js";
 import { turso } from '../turso.ts';
 
