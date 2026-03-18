@@ -5,7 +5,7 @@ import Layout from "@layouts/Layout.astro";
 import Header from "@components/Header.astro";
 import BaseLayout from "@layouts/BaseLayout.astro";
 
-const albums = await getCollection("comisionSalud");
+const albums = await getCollection("comisionPrevision");
 ---
 
 <BaseLayout title="Galeria">
@@ -16,8 +16,8 @@ const albums = await getCollection("comisionSalud");
       <h1>Galería</h1>
       <a href="/albums/galeria2025">Galería 2025</a>
       <a href="/albums/galeria">Galería 2026</a>
-      <a href="/albums/comisionsalud" hidden>Comisión Salud</a>
-      <a href="/albums/comisionprevision">Comision Prevision</a>
+      <a href="/albums/comisionsalud">Comisión Salud</a>
+      <a href="/albums/comisionprevision" hidden>Comisión Previsión</a>
     </div>
 
     <div class="masonry-grid">
