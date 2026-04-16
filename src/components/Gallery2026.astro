@@ -5,7 +5,6 @@ import Layout from "@layouts/Layout.astro";
 import Header from "@components/Header.astro";
 import BaseLayout from "@layouts/BaseLayout.astro";
 
-
 const albums = await getCollection("galeria");
 
 /*export function getStaticPaths() {
@@ -13,65 +12,72 @@ const albums = await getCollection("galeria");
         { params: {}}
     ]
 }*/
-
-
 ---
 
 <BaseLayout title="Galeria">
     <Header />
 
-
     <div class="container">
-      <div class="title">
-        <h1>Galería</h1>
-        <a href="/albums/galeria2025">Galería 2025</a>
-        <a href="/albums/galeria" hidden>Galería 2026</a>
-        <a href="/albums/comisionsalud">Comisión Salud</a>
-        <a href="/albums/comisionprevision">Comisión Previsión</a>
-          <p>
-            <span>Si, a la reducción de 47 a 40 horas semanales con aplicación gradual de 2026 a 2030. <br/></span>
-            <span>No, a la reducción de sueldos, salarios ni prestaciones. <br/></span>
-            <span>Si, a las horas límite de 11 por semana y hasta 4 horas diarias. <br/></span>
-            <span>No, a que las personas menores de 17 años laboren tiempo extraordinario. <br/></span>
-          </p>
+        <div class="title">
+            <h1>Galería</h1>
+            <a href="/albums/galeria2025">Galería 2025</a>
+            <a href="/albums/galeria" hidden>Galería 2026</a>
+            <a href="/albums/comisionsalud">Comisión Salud</a>
+            <a href="/albums/comisionprevision"
+                >Comisión Trabajo y Previsión Social</a
+            >
+            <p>
+                <span
+                    >Si, a la reducción de 47 a 40 horas semanales con
+                    aplicación gradual de 2026 a 2030. <br /></span
+                >
+                <span
+                    >No, a la reducción de sueldos, salarios ni prestaciones. <br
+                    /></span
+                >
+                <span
+                    >Si, a las horas límite de 11 por semana y hasta 4 horas
+                    diarias. <br /></span
+                >
+                <span
+                    >No, a que las personas menores de 17 años laboren tiempo
+                    extraordinario. <br /></span
+                >
+            </p>
+        </div>
+
+        <div class="masonry-grid">
+            {
+                albums.map((page, index) => (
+                    <a
+                        href={`/albums/${page.title}`}
+                        class="masonry-item fade-in"
+                        style={`animation-delay: ${index * 0.08}s`}
+                    >
+                        <Image
+                            src={page.data.cover}
+                            alt={page.data.title}
+                            width={600}
+                            height={800}
+                            class="masonry-img"
+                        />
+                        <div class="overlay">
+                            <h3>{page.data.title}</h3>
+                        </div>
+                    </a>
+                ))
+            }
+        </div>
     </div>
-    
-    
-    <div class="masonry-grid">
-      {
-        albums.map((page, index) => (
-          <a 
-            href={`/albums/${page.title}`} 
-            class="masonry-item fade-in"
-            style={`animation-delay: ${index * 0.08}s`}
-          > 
-            <Image
-              src={page.data.cover}
-              alt={page.data.title}
-              width={600}
-              height={800}
-              class="masonry-img"
-            />
-            <div class="overlay">
-              <h3>{page.data.title}</h3>
-            </div>
-          </a>
-        ))
-      }
-    </div>
-</div>
 </BaseLayout>
 
-
-
 <style>
-
-  .container p {
-    background-color: #6d0c2e;
-    color:#fff;
-    font-size: 20px;
-    padding: 20px;
-  }
+    .container p {
+        background-color: #6d0c2e;
+        color: #fff;
+        font-size: 20px;
+        padding: 20px;
+    }
 
     .title {
         text-align: center;
@@ -79,15 +85,15 @@ const albums = await getCollection("galeria");
 
     .title a {
         padding: 5px;
-        text-decoration: None; 
+        text-decoration: None;
         font-size: 25px;
         color: red;
     }
 
     .masonry-grid {
         margin-top: 15px;
-        column-count: 4;          /* 4 columnas dinámicas */
-        column-gap: 20px;         /* espacio horizontal */
+        column-count: 4; /* 4 columnas dinámicas */
+        column-gap: 20px; /* espacio horizontal */
         max-width: 1400px;
         margin: 0 auto;
     }
@@ -96,7 +102,7 @@ const albums = await getCollection("galeria");
         position: relative;
         display: inline-block;
         width: 100%;
-        margin-bottom: 20px;      /* espacio vertical */
+        margin-bottom: 20px; /* espacio vertical */
         overflow: hidden;
         border-radius: 12px;
         opacity: 0;
@@ -121,7 +127,7 @@ const albums = await getCollection("galeria");
     .overlay {
         position: absolute;
         inset: 0;
-        background: rgba(0,0,0,0.4);
+        background: rgba(0, 0, 0, 0.4);
         color: white;
         display: flex;
         justify-content: center;
@@ -162,7 +168,4 @@ const albums = await getCollection("galeria");
             column-count: 1;
         }
     }
-
-
 </style>
-

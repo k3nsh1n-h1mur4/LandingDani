@@ -2,34 +2,46 @@
 import BaseLayout from "@layouts/BaseLayout.astro";
 ---
 
-
 <footer>
     <div class="contacto">
-        <h4>Contactame: 
-            <img src="/images/phone.svg" alt="Teléfono">Tel: (55) 5036 0000 ext. 61326</a>
+        <h4>
+            Contactame:
+            <img src="/images/phone.svg" alt="Teléfono" />Tel: (55) 5036 0000
+            ext. 61326
         </h4>
-        <a href="https://www.facebook.com/people/Dani-Diputado/61563096990624/?rdid=ZODPF9zERLIvhkiG&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F1CqFzXvEsf%2F%3Fref%3D1">
-            <img src="/images/facebook.svg" alt="Facebook">
+    </div>
+    <div class="mediaSocial">
+        <a
+            href="https://www.facebook.com/people/Dani-Diputado/61563096990624/?rdid=ZODPF9zERLIvhkiG&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F1CqFzXvEsf%2F%3Fref%3D1"
+        >
+            <img src="/images/facebook.svg" alt="Facebook" />
         </a>
         <a href="/sendMail">
-            <img src="/images/mail.svg" alt="Gmail">
+            <img src="/images/mail.svg" alt="Gmail" />
         </a>
-        <p>@ Derechos Reservados Dip. Ing. Gilberto Daniel Castillo García</p> 
     </div>
+    <span>gilberto.castillo@diputados.gob.mx</span>
+    <p>@ Derechos Reservados Dip. Ing. Gilberto Daniel Castillo García</p>
 </footer>
 
 <style>
     footer {
-        background-color:  #6d0c2e;
+        background-color: #6d0c2e;
         color: #fff;
         margin-top: 5px;
         display: flex;
+        flex-direction: column;
         justify-content: center;
-        align-items: center;       
+        align-items: center;
+
+        .mediaSocial {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+        }
     }
     .contacto {
         text-align: center;
     }
-
 </style>
-

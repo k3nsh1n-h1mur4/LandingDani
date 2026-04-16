@@ -1,22 +1,23 @@
 ---
-import  Layout  from "@layouts/Layout.astro";
-
-
+import Layout from "@layouts/Layout.astro";
 
 export function getStaticPaths() {
-	return [
-		{ params: { albums: "gallery" } },
-		{ params: { albums: "galeria" } },
-	]
+    return [
+        { params: { albums: "gallery" } },
+        { params: { albums: "galeria" } },
+    ];
 }
 
 const { albums } = Astro.params;
-
-
 ---
 
 <div class="container-header">
-    <img src="/images/logoCamara.png" alt="Logo de dani" height="100px" width="450px" />
+    <img
+        src="/images/dipLogo.jpeg"
+        alt="Logo de dani"
+        height="100px"
+        width="450px"
+    />
     <h2>Dip. Gilberto Daniel Castillo García</h2>
     <div class="menu">
         <a href="/">Inicio</a>

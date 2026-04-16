@@ -1,7 +1,7 @@
 import { defineAction, ActionError } from "astro:actions";
 import { z } from "astro:schema";
 import { cryptEmail } from "@utils/CryptEmail.js";
-import { client } from '../lib/tursoDb.ts';
+import { client } from '@lib/tursoDb.ts';
 
 export const server = {
     sendMail: defineAction({

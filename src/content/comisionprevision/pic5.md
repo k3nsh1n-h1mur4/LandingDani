@@ -1,5 +1,5 @@
 ---
 title: "Galeria foto 5"
-cover: ./cs5.jpg
+cover: ./cp5.jpg
 coverAlt: "Fotogaleria"
 ---

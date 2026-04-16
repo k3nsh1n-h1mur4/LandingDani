@@ -1,17 +1,12 @@
 ---
 import { actions } from "astro:actions";
-import { client } from '../lib/tursoDb.ts';
+import { client } from "../lib/tursoDb.ts";
 ---
 
 <div class="container">
     <form action={actions.sendMail} method="post" enctype="multipart/form-data">
         <label for="userName">Nombre Completo</label>
-        <input
-            type="text"
-            name="name"
-            id=""
-            placeholder="Nombre Completo"
-        />
+        <input type="text" name="name" id="" placeholder="Nombre Completo" />
         <label for="correo">Email</label>
         <input type="email" name="email" id="" placeholder="Email" />
         <label for="message">Mensaje</label>
@@ -23,7 +18,7 @@ import { client } from '../lib/tursoDb.ts';
 
 <script>
     import { actions } from "astro:actions";
-    
+
     const form = document.querySelector("form");
     form?.addEventListener("submit", async (e) => {
         e.preventDefault();
@@ -31,15 +26,17 @@ import { client } from '../lib/tursoDb.ts';
         const name = formData.get("name");
         const email = formData.get("email");
         const message = formData.get("message");
+        if (name === "") {
+            console.log("No name");
+        }
         const { data, error } = await actions.sendMail(formData);
-        console.log(data)
+        console.log(data);
         if (data) {
             alert("Mensaje enviado correctamente");
         }
         form.reset();
     });
 </script>
-
 
 <style>
     .container {
@@ -81,4 +78,3 @@ import { client } from '../lib/tursoDb.ts';
         cursor: pointer;
     }
 </style>
-

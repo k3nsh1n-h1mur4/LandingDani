@@ -1,5 +1,5 @@
 ---
-title: "Galeria foto 3"
+title: "Galeria foto 2"
 cover: ./cs3.jpg
 coverAlt: "Fotogaleria"
 ---

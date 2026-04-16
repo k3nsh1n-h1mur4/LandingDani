@@ -1,5 +1,4 @@
 ---
-
 interface Props {
   title: string;
 }
@@ -19,18 +18,30 @@ import Footer from "@components/Footer.astro";
     <meta name="generator" content={Astro.generator} />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap"
+      rel="stylesheet"
+    />
     <link
       href="https://fonts.googleapis.com/css2?family=Stack+Sans+Headline:wght@200..700&display=swap"
       rel="stylesheet"
     />
-    <script data-goatcounter="https://my-account.goatcounter.com/count" async src="//gc.zgo.at/count.js" />
+    <script
+      data-goatcounter="https://my-account.goatcounter.com/count"
+      async
+      src="//gc.zgo.at/count.js"></script>
     <!-- Open Graph tags   -->
-     <meta property="og:title" content="Diputado Daniel Castillo"/>
-     <meta property="og:type" content="website"/>
-     <meta property="og:url" content="https://www.virtualdipdanielcastillo.com"/>
-     <meta property="og:description" content="Página Virtual Diputado Daniel Castillo"/>
-     <meta property="og:site_name" content="Diputado Daniel Castillo"/>
+    <meta property="og:title" content="Diputado Daniel Castillo" />
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:url"
+      content="https://www.virtualdipdanielcastillo.com"
+    />
+    <meta
+      property="og:description"
+      content="Página Virtual Diputado Daniel Castillo"
+    />
+    <meta property="og:site_name" content="Diputado Daniel Castillo" />
 
     <title>{title}</title>
   </head>
@@ -51,16 +62,18 @@ import Footer from "@components/Footer.astro";
     height: 100vh;
   }
 
-  body {
+  /*body {
     margin: 0;
     box-sizing: content-box;
-  }
+    background-image: linear-gradient(white, darkred);
+}*/
+
   .container {
     min-height: 100vh;
     box-sizing: content-box;
     display: grid;
-    grid-template-rows:  auto 1fr auto;
-    grid-template-areas: 
+    grid-template-rows: auto 1fr auto;
+    grid-template-areas:
       "head"
       "principal"
       "foot";
@@ -77,7 +90,4 @@ import Footer from "@components/Footer.astro";
     grid-area: foot;
     background-color: red;
   }
-  
-
 </style>
-
