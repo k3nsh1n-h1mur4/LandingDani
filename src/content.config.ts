@@ -57,6 +57,17 @@ const diaMundial = defineCollection({
         })  
 });
 
+const foroMundial = defineCollection({ 
+    loader: glob({ pattern: "**/*.md" , base: "./src/content/comisionsalud/foroSalud" }),
+    //type: "data",
+    schema: ({ image }) =>  
+        z.object({
+            title: z.string(),
+            cover: image(),
+            coverAlt: z.string(),
+        })  
+});
+
 const comisionPrevision = defineCollection({ 
     loader: glob({ pattern: "*.md" , base: "./src/content/comisionprevision" }),
     //type: "data",
@@ -67,4 +78,4 @@ const comisionPrevision = defineCollection({
             coverAlt: z.string(),
         })  
 });
-export const collections = { albums, biography, galeria, comisionSalud, diaMundial, comisionPrevision };
+export const collections = { albums, biography, galeria, comisionSalud, diaMundial, foroMundial,  comisionPrevision };

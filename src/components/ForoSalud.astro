@@ -4,10 +4,16 @@ import { getCollection } from "astro:content";
 import Header from "@components/Header.astro";
 import BaseLayout from "@layouts/BaseLayout.astro";
 
-const albums = await getCollection("diaMundial");
+const albums = await getCollection("foroMundial");
+
+interface Props {
+  title: string;
+}
+
+const { title } = Astro.props;
 ---
 
-<BaseLayout title="Galeria">
+<BaseLayout title={"Foro Mundial de la Salud 2026"}>
   <Header />
 
   <div class="container">
@@ -19,25 +25,6 @@ const albums = await getCollection("diaMundial");
       <a href="/albums/comisionprevision">Comision Prevision</a>
     </div>
 
-    <div class="title">
-      <h2>Día Mundial de la Salud</h2>
-      <p>
-        Hoy refrendamos que la salud no es un privilegio, sino un derecho
-        fundamental de todas y todos. En el marco del Día Mundial de la Salud,
-        reconocemos el esfuerzo del personal médico, de enfermería,
-        administrativo y operativo, así como los avances en infraestructura,
-        cobertura y atención que fortalecen el sistema de salud en México.
-        Sigamos construyendo un país con más bienestar, justicia social y acceso
-        digno a la salud para todas las personas. <br /><br /> #DíaMundialDeLaSalud
-        #SaludParaTodos #DerechoALaSalud #México #JusticiaSocial #Bienestar
-      </p>
-    </div>
-
-    <div class="vid">
-      <video width="" height="" controls>
-        <source src="/images/video.mp4" type="video/mp4" />
-      </video>
-    </div>
     <div class="masonry-grid">
       {
         albums.map((page, index) => (
