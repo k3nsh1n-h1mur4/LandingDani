@@ -1,0 +1,47 @@
+---
+export const prerender = false;
+import { actions } from 'astro:actions';
+
+---
+
+
+<div class="container">
+  <form action={actions.sendMail} method="post" enctype="multipart/form-data">
+    <label for="userName">Nombre Completo</label>
+    <input type="text" name="name" id="" placeholder="Nombre Completo" />
+    <label for="correo">Email</label>
+    <input type="email" name="email" id="" placeholder="Email" />
+    <label for="message">Mensaje</label>
+    <textarea name="message" id="" cols="30" rows="10" placeholder="Mensaje"
+    ></textarea>
+    <button type="submit">Enviar</button>
+  </form>
+</div>
+
+
+<style>
+  .container {
+    displa : flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+</style>
+
+
+<script>
+  import { actions } from "astro:actions";
+
+  const btn = document.querySelector('button');
+  btn?.addEventListener('click', async (e) => {
+    e.preventDefault();
+    const formData = new FormData();
+    const name = formData.get("name");
+    const email = formData.get("email");
+    const message = formData.get('message');
+    const { error } = await actions.sendMail(formData);
+    if (!error) {
+      console.log(error)
+    }
+  })
+</script>

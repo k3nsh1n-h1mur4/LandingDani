@@ -32,3 +32,4 @@ entreText.py
 createMDs.sh
 readMails.astro.backup
 helpers/
+src/pages/sendMail2.astro

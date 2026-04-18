@@ -1,0 +1,86 @@
+---
+interface Props {
+  title: string;
+}
+
+const { title } = Astro.props;
+
+import Header from "@components/Header.astro";
+import Main from "@components/Main.astro";
+import Footer from "@components/Footer.astro";
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/webp" href="/images/morenalogo.webp" />
+    <meta name="generator" content={Astro.generator} />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Stack+Sans+Headline:wght@200..700&display=swap"
+      rel="stylesheet"
+    />
+    <script data-goatcounter="https://my-account.goatcounter.com/count" async src="//gc.zgo.at/count.js" />
+    <!-- Open Graph tags   -->
+     <meta property="og:title" content="Diputado Daniel Castillo"/>
+     <meta property="og:type" content="website"/>
+     <meta property="og:url" content="https://www.virtualdipdanielcastillo.com"/>
+     <meta property="og:description" content="Página Virtual Diputado Daniel Castillo"/>
+     <meta property="og:site_name" content="Diputado Daniel Castillo"/>
+
+    <title>{title}</title>
+  </head>
+  <body>
+    <div class="main-container">
+        <header>Header</header>
+        <aside>Menu</aside>
+        <section>Content</section>
+        <footer>footer</footer>        
+    </div>
+  </body>
+</html>
+
+
+<style>
+    body {
+        background-color: #333;
+        width: 100%;
+        height: 100%;
+    }
+
+    .main-container {
+        display: grid;
+        grid-template-rows: repeat(4, 1fr);
+        grid-template-areas: "head"
+                             "menu"
+                             "body"
+                             "fot head";
+
+    }
+
+    header {
+        grid-area: head;
+        background-color: red;
+    }
+
+    aside {
+        grid-area: menu;
+        background-color: deeppink;
+    }
+
+    section {
+        grid-area: body;
+        background-color: darkgreen;
+    }
+
+    footer {
+        grid-area: fot;
+        background-color: aqua;
+    }
+
+    /* --size: auto-fill, minmax(250px, 1fr)*/
+</style>
