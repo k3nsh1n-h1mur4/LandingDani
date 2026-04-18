@@ -39,7 +39,7 @@ photo: /images/mesa7.jpeg
 >
 >- Comisiones: Salud, Seguridad Social y Trabajo y Previsión Social, en está última ostenta la posición de secretario.
 >
->- **Grupo de amistad:** 🇺🇸 Estados Unidos, 🇳🇴Noruega y 🇵🇦Panamá. 
+>- **Grupo de amistad:** Estados Unidos, Noruega y Panamá. 
 </div>
 <!-- </td>
 <td>
