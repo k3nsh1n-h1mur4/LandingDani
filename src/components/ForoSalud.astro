@@ -22,7 +22,12 @@ const { title } = Astro.props;
       <a href="/albums/galeria2025">Galería 2025</a>
       <a href="/albums/galeria">Galería 2026</a>
       <a href="/albums/comisionsalud" hidden>Comisión Salud</a>
-      <a href="/albums/comisionprevision">Comision Prevision</a>
+      <a href="/albums/comisionprevision">Comisión Trabajo y Previsión Social</a
+      >
+    </div>
+
+    <div class="linksSalud">
+      <a href="/albums/diamundialsalud">Foro de Salud 2026</a>
     </div>
 
     <div class="masonry-grid">
@@ -67,6 +72,18 @@ const { title } = Astro.props;
     text-decoration: None;
     font-size: 25px;
     color: red;
+  }
+
+  .linksSalud {
+    margin-top: 20px;
+    text-align: center;
+
+    a {
+      padding: 5px;
+      text-decoration: None;
+      font-size: 20px;
+      color: indigo;
+    }
   }
 
   .masonry-grid {
