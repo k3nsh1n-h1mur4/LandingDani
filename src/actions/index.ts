@@ -15,11 +15,10 @@ export const server = {
             const name = input.name;
             const email = await cryptEmail(input.email);
             const message = input.message;
-            console.log(email)
             const result = await client.batch(
                 [
                     {
-                        sql: 'INSERTO INTO buzon(name, email, message) VALUES(?, ?, ?)',
+                        sql: 'INSERT INTO buzon(name, email, message) VALUES(?, ?, ?)',
                         args: [name, email, message],
                     },
                 ],
