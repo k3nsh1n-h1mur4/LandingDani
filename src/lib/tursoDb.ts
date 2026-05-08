@@ -1,6 +1,6 @@
 //import { createClient } from "@libsql/client/web";
-//import { createClient } from "@libsql/client/http";
-import { createClient } from "@libsql/client/web";
+import { createClient } from "@libsql/client/http";
+//import { createClient } from "@libsql/client/web";
 
 
 export const client = createClient({
